@@ -1,2 +1,2 @@
-# Azure_Resume
+# Azure Resume
 My Own Resume in Azure
