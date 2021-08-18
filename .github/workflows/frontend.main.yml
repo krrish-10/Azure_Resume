@@ -23,6 +23,12 @@ jobs:
         azcliversion: 2.0.72
         inlineScript: |
             az storage blob upload-batch --account-name azureresumestorageui -d '$web' -s frontend/
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+           az cdn endpoint purge --content-paths  "/*" --profile-name "mkresumeazure" --name "mkresume" --resource-group "azureresume-rg"
 
   # Azure logout 
     - name: logout
